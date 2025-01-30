@@ -1,0 +1,15 @@
+meta {
+  name: Update a price alert
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/price-alerts/:alertId
+  body: json
+  auth: none
+}
+
+params:path {
+  alertId: 
+}

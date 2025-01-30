@@ -1,0 +1,36 @@
+{
+    "appbar": {
+      "title": "CryptoVault - Cryptocurrency Tracker",
+      "login": {
+        "label": "Login"
+      },
+      "signup": {
+        "label": "Sign Up"
+      }
+    },
+
+    "cryptoList": {
+        "title": "Cryptocurrency Tracker",
+        "assetID": { "label": "Asset ID" },
+        "assetName": { "label": "Asset Name" },
+        "assetSymbol": "Asset Symbol",
+        "price": "Price",
+        "currency": "Currency",
+        "lastUpdate": "Last Update",
+        "setPriceAlert": "Set Price Alert"
+    },
+
+    "pricealert": {
+        "title": "Price Alerts",
+        "alertID": { "label": "Alert ID"},
+        "assetID": "Asset ID",
+        "assetName": "Asset Name",
+        "assetSymbol": "Asset Symbol",
+        "price": "Current Price",
+        "targetPrice": "Target Price",
+        "alertType": "Alert Type",
+        "Actions": "Actions",
+        "View": "View",
+        "Delete": "Delete"
+    }
+  }

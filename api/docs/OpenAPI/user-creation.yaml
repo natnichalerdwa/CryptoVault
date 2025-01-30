@@ -1,0 +1,99 @@
+openapi: 3.1.0
+info:
+  title: User Management API for CryptoVault
+  version: 1.0.0
+  summary: "User Creation"
+  description: "API for user registration and account creation."
+
+components:
+  schemas:
+    securityFeatures:
+      type: object
+      properties:
+        two-factor-authentication:
+          description: "Enable two-factor-authentication for user accounts."
+          type: boolean
+        encryption:
+          description: "Ensure all sensitive data is encrypted at rest and in transit."
+          type: boolean
+
+paths:
+  /api/users/register:
+    post:
+      summary: "Register a new user"
+      description: "Creates a new user account with the provided details."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                userID:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                phoneNumber:
+                  type: string
+                SSN:
+                  type: string
+              required:
+                - firstName
+                - lastName
+                - userID
+                - email
+                - password
+                - phoneNumber
+                - SSN
+      responses:
+        '200':
+          description: "User registered successfully"
+        '400':
+          description: "Invalid input data"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: "Detailed error message"
+              examples:
+                missing_field:
+                  summary: "Missing field"
+                  value:
+                    error: "All fields are required: firstName, lastName, userID, email, password, phoneNumber, and SSN."
+                invalid_email_format:
+                  summary: "Invalid email format"
+                  value:
+                    error: "The provided email address is not valid."
+                weak_password:
+                  summary: "Weak password"
+                  value:
+                    error: "The password does not meet security requirements."
+                invalid_phone_number:
+                  summary: "Invalid phone number"
+                  value:
+                    error: "The phone number provided is not valid."
+                invalid_SSN:
+                  summary: "Invalid SSN"
+                  value:
+                    error: "The SSN provided is not valid."
+        '500':
+          description: "Internal server error"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: "Description of the server error"
+              example:
+                error: "An unexpected error occurred on the server."

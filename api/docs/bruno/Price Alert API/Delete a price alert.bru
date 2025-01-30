@@ -1,0 +1,15 @@
+meta {
+  name: Delete a price alert
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseUrl}}/price-alerts/:alertId
+  body: none
+  auth: none
+}
+
+params:path {
+  alertId: 
+}

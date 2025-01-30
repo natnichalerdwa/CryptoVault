@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Price Alert API",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

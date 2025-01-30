@@ -1,0 +1,174 @@
+openapi: 3.1.0
+info:
+  title: Price Alert API
+  version: 1.0.0
+  description: API to manage price alerts for cryptocurrency assets.
+servers:
+  - url: https://api.cryptotracker.com/v1
+    description: Production server
+  - url: http://localhost:3000
+    description: Development server
+paths:
+  /price-alerts:
+    post:
+      summary: Create a new price alert
+      description: Set a price alert for a specific cryptocurrency asset.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PriceAlertRequest'
+      responses:
+        '201':
+          description: Price alert successfully created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceAlertResponse'
+        '400':
+          description: Invalid request data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      summary: Get all price alerts
+      description: Retrieve all price alerts set by the authenticated user.
+      responses:
+        '200':
+          description: Successfully retrieved price alerts.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PriceAlertResponse'
+        '401':
+          description: Unauthorized access.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /price-alerts/{alertId}:
+    get:
+      summary: Retrieve a specific price alert
+      description: Get the details of a specific price alert by its ID.
+      parameters:
+        - name: alertId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved the price alert.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceAlertResponse'
+        '404':
+          description: Price alert not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      summary: Update a price alert
+      description: Modify the details of an existing price alert.
+      parameters:
+        - name: alertId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PriceAlertRequest'
+      responses:
+        '200':
+          description: Price alert successfully updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceAlertResponse'
+        '404':
+          description: Price alert not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Delete a price alert
+      description: Remove a specific price alert by its ID.
+      parameters:
+        - name: alertId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Price alert successfully deleted.
+        '404':
+          description: Price alert not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    PriceAlertRequest:
+      type: object
+      properties:
+        asset:
+          type: string
+          description: The symbol of the cryptocurrency asset (e.g., BTC, ETH).
+          example: BTC
+        alertType:
+          type: string
+          description: Type of alert, such as 'above' or 'below'.
+          enum: [above, below]
+          example: above
+        targetPrice:
+          type: number
+          description: The price threshold to trigger the alert.
+          example: 50000
+    PriceAlertResponse:
+      type: object
+      properties:
+        alertId:
+          type: string
+          description: Unique identifier for the price alert.
+          example: "123e4567-e89b-12d3-a456-426614174000"
+        asset:
+          type: string
+          description: The symbol of the cryptocurrency asset.
+          example: BTC
+        alertType:
+          type: string
+          description: Type of alert, such as 'above' or 'below'.
+          example: above
+        targetPrice:
+          type: number
+          description: The price threshold to trigger the alert.
+          example: 50000
+        createdAt:
+          type: string
+          format: date-time
+          description: The timestamp when the alert was created.
+          example: "2024-11-11T14:30:00Z"
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Error code.
+          example: "400"
+        message:
+          type: string
+          description: Error message.
+          example: "Invalid request data"

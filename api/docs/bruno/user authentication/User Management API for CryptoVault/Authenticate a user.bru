@@ -1,0 +1,18 @@
+meta {
+  name: Authenticate a user
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/users/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "userID": "",
+    "password": ""
+  }
+}

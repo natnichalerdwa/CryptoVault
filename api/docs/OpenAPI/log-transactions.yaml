@@ -1,0 +1,63 @@
+openapi: 3.1.0
+info:
+  title: Log Transactions API
+  summary: API to log transactions (buy/sell)
+  version: '1.0'
+servers:
+  - url: http://localhost:9000
+    description: Local server
+paths:
+  /transaction:
+    post:
+      operationId: logTransaction
+      description: Log a buy/sell transaction for a user's portfolio
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Transaction"
+      responses:
+        200:
+          description: Transaction successfully logged
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        400:
+          description: Invalid transaction
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+components:
+  schemas:
+    Transaction:
+      type: object
+      properties:
+        portfolio_id:
+          type: string
+        asset_id:
+          type: string
+        quantity:
+          type: number
+        transaction_type:
+          type: string
+          enum:
+            - buy
+            - sell

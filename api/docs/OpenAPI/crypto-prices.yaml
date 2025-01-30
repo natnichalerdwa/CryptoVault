@@ -1,0 +1,58 @@
+openapi: 3.1.0
+info:
+  title: Crypto Price Retrieval API
+  summary: API to get cryptocurrency prices
+  version: '1.0'
+servers:
+  - url: http://localhost:9000
+    description: Local server
+paths:
+    /price:
+      get:
+        operationId: getPrice
+        description: Get the price of available
+        responses:
+          200:
+            description: Price successfully retrieved
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Price"
+          404:
+            description: Price not found
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    message:
+                      type: string
+          500:
+            description: Internal server error
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    message:
+                      type: string
+
+components:
+  schemas:
+    Price:
+      type: object
+      properties:
+        asset_id:
+          type: string
+        asset_name:
+          type: string
+        symbol:
+          type: string
+        price:
+          type: number
+        last_updated:
+          type: string
+          format: date-time      
+                    

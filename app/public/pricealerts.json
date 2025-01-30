@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "symbol": "BTC",
+        "price": 10000,
+        "direction": "above"
+    },
+    {
+        "id": 2,
+        "symbol": "ETH",
+        "price": 500,
+        "direction": "below"
+    }
+]

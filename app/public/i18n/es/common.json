@@ -1,0 +1,36 @@
+{
+    "appbar": {
+      "title": "CryptoVault - Seguimiento de criptomonedas",
+      "login": {
+        "label": "Iniciar sesión"
+      },
+      "signup": {
+        "label": "Regístrate"
+      }
+    },
+
+    "cryptoList": {
+        "title": "Seguimiento de criptomonedas",
+        "assetID": "ID de activo",
+        "assetName": "Nombre del activo",
+        "assetSymbol": "Símbolo del activo",
+        "price": "Precio",
+        "currency": "Moneda",
+        "lastUpdate": "Última actualización",
+        "setPriceAlert": "Establecer alerta de precio"
+    }, 
+
+    "pricealert": {
+        "title": "Alertas de precio",
+        "alertID": "ID de alerta",
+        "assetID": "ID de activo",
+        "assetName": "Nombre del activo",
+        "assetSymbol": "Símbolo del activo",
+        "price": "Precio actual",
+        "targetPrice": "Precio objetivo",
+        "alertType": "Tipo de alerta",
+        "Actions": "Acciones",
+        "View": "Ver",
+        "Delete": "Eliminar"
+    }
+  }

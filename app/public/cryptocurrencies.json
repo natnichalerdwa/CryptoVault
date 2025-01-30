@@ -1,0 +1,10 @@
+[
+    { 
+    "assetID": "1", 
+    "assetName": "Bitcoin", 
+    "assetSymbol": "BTC", 
+    "price": 100, 
+    "currency": "USD", 
+    "lastUpdated": "2024-11-25" 
+    }
+]

@@ -1,0 +1,253 @@
+
+
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #0e0e10;
+    color: #eaeaea;
+    line-height: 1.6;
+}
+
+/* Introduction Section */
+.landing-header {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #4cc9f0, #4361ee);
+    color: white;
+}
+
+.landing-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.landing-header p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.explore-button {
+    background-color: #4361ee;
+    color: white;
+    padding: 8px 16px; /* Reduced padding for a smaller button */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    border-radius: 6px; /* Adjusted border radius for compact styling */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: #4cc9f0;
+    transform: scale(1.05);
+}
+
+
+/* Features Section */
+.features-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #16161a;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background-color: #1e1e24;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.feature-card h3 {
+    color: #4cc9f0;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Market Trends Section */
+.market-trends-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #4cc9f0, #7209b7);
+    color: white;
+    text-align: center;
+}
+
+.market-trends {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.trend {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 200px;
+}
+
+.trend h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.trend p {
+    margin: 5px 0;
+}
+
+/* Call-to-Action Section */
+.cta-section {
+    background-color: #16161a;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    color: #eaeaea;
+    margin-bottom: 20px;
+}
+
+.signup-button {
+    background-color: #7209b7;
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.signup-button:hover {
+    background-color: #4cc9f0;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.landing-footer {
+    background-color: #0e0e10;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    border-top: 1px solid #22222a;
+}
+
+.crypto-marquee {
+    background-color: #16161a;
+    color: #eaeaea;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    border-bottom: 1px solid #22222a;
+    font-size: 1rem;
+    position: relative;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 200s linear infinite; /* Adjust speed as needed */
+    will-change: transform; /* Optimizes animation for better performance */
+}
+
+.marquee-content.duplicate {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Start immediately after the first set */
+    animation: marquee 200s linear infinite;
+}
+
+.marquee-item {
+    display: inline-block;
+    margin-right: 40px;
+    font-weight: 500;
+}
+
+.marquee-item strong {
+    color: #4cc9f0;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0); /* Start from the current position */
+    }
+    to {
+        transform: translateX(-100%); /* Move out of view */
+    }
+}
+
+.crypto-news {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #1e1e24; /* Background color */
+    border-radius: 8px; /* Rounded corners */
+    color: #eaeaea; /* Text color */
+    overflow: hidden; /* Ensures the marquee effect stays within bounds */
+    position: relative;
+}
+
+.crypto-news h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #4cc9f0; /* Highlighted headline color */
+}
+
+.news-marquee {
+    white-space: nowrap; /* Keep items in a single line */
+    overflow: hidden; /* Hide overflowing content */
+    position: relative;
+}
+
+.news-content {
+    display: inline-block;
+    animation: scroll-news 200s linear infinite; 
+}
+
+
+
+.news-item {
+    display: inline-block;
+    margin-right: 50px; /* Space between items */
+    font-size: 1rem;
+    color: #4cc9f0; /* Link color */
+}
+
+.news-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.news-item a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.news-item small {
+    color: #b0b0b0; /* Subtitle color */
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+/* Keyframe for scrolling animation */
+@keyframes scroll-news {
+    0% {
+        transform: translateX(0); /* Start off-screen on the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End off-screen on the left */
+    }
+}

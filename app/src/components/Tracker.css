@@ -1,0 +1,163 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #2a0944; /* Dark purple background */
+  color: #6d6d6d; /* Light text for contrast */
+}
+
+h1 {
+  color: #ffeb3b; /* Bright yellow */
+  text-align: center;
+  margin-top: 20px;
+}
+
+h2 {
+  color: #ffeb3b;
+  text-align: center;
+}
+
+.tracker {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #3e1d59; /* Medium purple card background */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Search Input */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #a463d1; /* Purple border */
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #4f2768; /* Darker purple input background */
+  color: #444444; /* White text */
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #ffeb3b; /* Yellow on focus */
+  background-color: #6c3483; /* Slightly lighter purple background */
+}
+
+/* Buttons */
+button {
+  background-color: #ffeb3b; /* Yellow button */
+  color: #2a0944; /* Dark purple text */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffe066; /* Lighter yellow */
+}
+
+button:disabled {
+  background-color: #777; /* Disabled button gray */
+  cursor: not-allowed;
+}
+
+/* Crypto List */
+.crypto-list {
+  list-style: none;
+  padding: 0;
+}
+
+.crypto-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #50286d; /* Deep purple for list items */
+  border: 1px solid #a463d1; /* Purple border */
+  border-radius: 5px;
+  color: #f8f8f8; /* Light text */
+}
+
+.crypto-item:hover {
+  background-color: #6c3483; /* Brighter purple for hover */
+}
+
+.crypto-item button {
+  margin-left: 10px;
+}
+
+/* Price Alerts */
+.price-alerts {
+  margin-top: 20px;
+}
+
+.price-alert-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f8e1ff; /* Light purple background */
+  border: 1px solid #ffeb3b; /* Yellow border */
+  border-radius: 5px;
+  color: #2a0944; /* Dark purple text */
+}
+
+.price-alert-item:hover {
+  background-color: #ffe066; /* Light yellow hover */
+}
+
+/* Alert Form */
+.alert-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ddd8cf; /* Medium purple background */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  color: purple;
+}
+
+.alert-form h3 {
+  color: purple; /* Yellow heading */
+}
+
+.alert-form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #a463d1;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #4f2768; /* Dark purple input */
+  color: rgb(68, 68, 68);
+}
+
+.alert-form input[type="number"]:focus {
+  outline: none;
+  border-color: #ffeb3b;
+  background-color: black;
+}
+
+.alert-form button {
+  width: 100%;
+}
+
+/* Overlay for Alert Form */
+.alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}

@@ -1,0 +1,8 @@
+{
+    "appbar.title": "CryptoTracker",
+    "appbar.logout": "Logout",
+    "crypto.price": "Price",
+    "crypto.volume": "Volume",
+    "crypto.change": "Change",
+    "crypto.24h": "24h"
+}
